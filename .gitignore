@@ -1,0 +1,10 @@
+*.sw[po]
+*.py[cod]
+*.log
+env/
+venv/
+dist/
+build/
+.eggs/
+.cache/
+*.egg-info/
