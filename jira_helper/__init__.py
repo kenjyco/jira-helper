@@ -56,7 +56,8 @@ SELECTED_FIELDS = rh.Collection(
     'jira',
     'fields',
     index_fields='name,type',
-    json_fields='selected'
+    json_fields='selected',
+    rx_type='(return|orderby)'
 )
 
 SAVED_QUERIES = rh.Collection(
