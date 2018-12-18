@@ -5,7 +5,8 @@ import jira_helper as jh
 @click.command()
 def main():
     """Start a REPL to pass JQL queries to JIRA"""
-    jh.repl()
+    repl = jh.get_repl()
+    repl()
 
 
 if __name__ == '__main__':

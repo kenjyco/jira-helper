@@ -22,17 +22,6 @@ get_setting = sh.settings_getter(__name__)
 JIRA_URL = get_setting('JIRA_URL')
 JIRA_API_TOKEN = get_setting('JIRA_API_TOKEN')
 JIRA_API_USER = get_setting('JIRA_API_USER')
-
-if not JIRA_URL or not JIRA_API_TOKEN or not JIRA_API_USER:
-    print(
-        '\nPlease define JIRA_URL, JIRA_API_TOKEN, and JIRA_API_USER environment vars..\n\n'
-        'Visit https://confluence.atlassian.com/cloud/api-tokens-938839638.html to '
-        'create an API token for your JIRA user if you have not already done so.'
-    )
-    from sys import exit
-    exit(1)
-
-
 PROJECTS = get_setting('PROJECTS')
 ISSUE_TYPES = get_setting('ISSUE_TYPES')
 STATUS_TYPES = get_setting('STATUS_TYPES')
@@ -69,6 +58,12 @@ SAVED_QUERIES = rh.Collection(
 
 def get_session():
     """Return an authenticated session object"""
+    if not JIRA_URL or not JIRA_API_TOKEN or not JIRA_API_USER:
+        raise Exception(
+            '\nPlease define JIRA_URL, JIRA_API_TOKEN, and JIRA_API_USER environment vars..\n\n'
+            'Visit https://confluence.atlassian.com/cloud/api-tokens-938839638.html to '
+            'create an API token for your JIRA user if you have not already done so.'
+        )
     session = requests.Session()
     session.auth = (JIRA_API_USER, JIRA_API_TOKEN)
     return session
@@ -392,5 +387,7 @@ class JiraREPL(GetCharLoop):
         pprint(self._info)
 
 
-repl = JiraREPL(chfunc_dict=chfunc, name='jira', prompt='jira-repl> ')
+def get_repl():
+    """Return an instance of JiraREPL"""
+    return JiraREPL(chfunc_dict=chfunc, name='jira', prompt='jira-repl> ')
 
