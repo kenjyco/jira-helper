@@ -6,14 +6,14 @@ with open('README.rst', 'r') as fp:
 
 setup(
     name='jira-helper',
-    version='0.0.1',
+    version='0.0.2',
     description='CLI tools and REPL for passing JQL to a JIRA server and filtering results',
     long_description=long_description,
     author='Ken',
     author_email='kenjyco@gmail.com',
     license='MIT',
     url='https://github.com/kenjyco/jira-helper',
-    download_url='https://github.com/kenjyco/jira-helper/tarball/v0.0.1',
+    download_url='https://github.com/kenjyco/jira-helper/tarball/v0.0.2',
     packages=find_packages(),
     install_requires=[
         'requests',
