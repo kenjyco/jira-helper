@@ -270,7 +270,7 @@ chfunc = OrderedDict([
 
 
 class JiraREPL(GetCharLoop):
-    """A REPL to make calls to JQL search api on HighGround JIRA"""
+    """A REPL to make calls to JQL search api on JIRA server"""
     def __init__(self, *args, **kwargs):
         self._session = kwargs.pop('session', get_session())
         last_query = SAVED_QUERIES.find(get_fields='jql', limit=1)
