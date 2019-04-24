@@ -1,3 +1,8 @@
 requests
 chloop
 settings-helper
+
+# For development
+ipython
+pdbpp
+pytest
