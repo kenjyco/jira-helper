@@ -16,8 +16,8 @@ setup(
     download_url='https://github.com/kenjyco/jira-helper/tarball/v0.0.3',
     packages=find_packages(),
     install_requires=[
-        'requests',
         'chloop',
+        'requests',
         'settings-helper',
     ],
     include_package_data=True,
