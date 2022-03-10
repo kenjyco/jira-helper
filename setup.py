@@ -4,6 +4,9 @@ from setuptools import setup, find_packages
 with open('README.rst', 'r') as fp:
     long_description = fp.read()
 
+with open('requirements.txt', 'r') as fp:
+    requirements = fp.read().splitlines()
+
 setup(
     name='jira-helper',
     version='0.0.3',
@@ -15,11 +18,7 @@ setup(
     url='https://github.com/kenjyco/jira-helper',
     download_url='https://github.com/kenjyco/jira-helper/tarball/v0.0.3',
     packages=find_packages(),
-    install_requires=[
-        'chloop',
-        'requests',
-        'settings-helper',
-    ],
+    install_requires=requirements,
     include_package_data=True,
     package_dir={'': '.'},
     package_data={
