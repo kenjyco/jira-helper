@@ -32,12 +32,14 @@ setup(
     classifiers=[
         'Development Status :: 3 - Alpha',
         'Environment :: Console',
-        'License :: OSI Approved :: MIT License',
-        'Programming Language :: Python',
-        'Programming Language :: Python :: 3.5',
-        'Topic :: Software Development :: Libraries',
         'Intended Audience :: Developers',
+        'License :: OSI Approved :: MIT License',
+        'Operating System :: MacOS :: MacOS X',
+        'Operating System :: POSIX :: Linux',
+        'Programming Language :: Python :: 3.5',
+        'Programming Language :: Python',
+        'Topic :: Software Development :: Libraries',
+        'Topic :: Utilities',
     ],
-    keywords = ['jira', 'helper']
+    keywords=['jira', 'jql', 'repl', 'cli', 'command-line', 'helper', 'kenjyco']
 )
-
