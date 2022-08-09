@@ -9,14 +9,14 @@ with open('requirements.txt', 'r') as fp:
 
 setup(
     name='jira-helper',
-    version='0.0.4',
+    version='0.0.5',
     description='CLI tools and REPL for passing JQL to a JIRA server and filtering results',
     long_description=long_description,
     author='Ken',
     author_email='kenjyco@gmail.com',
     license='MIT',
     url='https://github.com/kenjyco/jira-helper',
-    download_url='https://github.com/kenjyco/jira-helper/tarball/v0.0.4',
+    download_url='https://github.com/kenjyco/jira-helper/tarball/v0.0.5',
     packages=find_packages(),
     install_requires=requirements,
     include_package_data=True,
