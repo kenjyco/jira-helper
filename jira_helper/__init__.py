@@ -5,7 +5,6 @@
 import os
 import urllib
 import requests
-import ujson
 import re
 import settings_helper as sh
 import input_helper as ih
@@ -16,6 +15,10 @@ from functools import partial
 from collections import OrderedDict
 from chloop import GetCharLoop
 from pprint import pprint
+try:
+    from ujson import loads
+except ImportError:
+    from json import loads
 
 
 get_setting = sh.settings_getter(__name__)
@@ -100,7 +103,7 @@ def jql_search(jql, session=None, count=False, fields='', return_raw=False):
         full_json = response.json()
     else:
         if response.status_code == 400:
-            errors = ujson.loads(ih.decode(response.content)).get('errorMessages')
+            errors = loads(ih.decode(response.content)).get('errorMessages')
             print('\n'.join(errors))
             return
         else:
