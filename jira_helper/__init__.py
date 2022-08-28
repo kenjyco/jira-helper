@@ -17,7 +17,7 @@ from chloop import GetCharLoop
 from pprint import pprint
 try:
     from ujson import loads
-except ImportError:
+except (ImportError, ModuleNotFoundError):
     from json import loads
 
 
