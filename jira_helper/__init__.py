@@ -16,6 +16,12 @@ from collections import OrderedDict
 from chloop import GetCharLoop
 from pprint import pprint
 try:
+    ModuleNotFoundError
+except NameError:
+    class ModuleNotFoundError(ImportError):
+        pass
+
+try:
     from ujson import loads
 except (ImportError, ModuleNotFoundError):
     from json import loads
